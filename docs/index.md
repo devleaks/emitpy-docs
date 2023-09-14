@@ -1,11 +1,11 @@
-# Obsidian Notes
+#intro 
 
-Publish your public notes with MkDocs
+Airport Opera is a software tool to estimate an airport's operational effectiveness.
 
-## Hello World!
+[[Opera – Airport Operational Effectiveness Assessment|Airport Opera]] proceeds from observation of aircrafts and ground support vehicles movements. From those observations, quantified observables are created and constantly monitored.
+They are compared to past values, thereby providing an array or possible trends and evolutions of a current situation.
 
-The `index.md` in the `/docs` folder is the homepage you see here.
 
-The folders in `/docs` appear as the main sections on the navigation bar.
+# Emitpy: ADS–B Track Generator
 
-The notes appear as pages within these sections. For example, [[Note 1]] in `Topic 1`
+To help develop Airport Opera [[Emitpy – ADS-B Track Generator|emitpy]] is a ADS-B track generator that simulates aircrafts and ground support vehicles ADS-B message broadcasts. It is used to generate deterministic sets of data for development purposes. Since artificially generated, sets of data can exhibit challenges and controlled behaviours to developers.
