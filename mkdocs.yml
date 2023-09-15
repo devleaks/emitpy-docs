@@ -1,26 +1,26 @@
-site_name: obsidian-mkdocs template
+site_name: Airport Opera
 
 theme:
-    name: 'material'
+    name: 'dracula'
     palette:
 
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: lime
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
+    # # Light mode
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default
+    #   primary: lime
+    #   accent: indigo
+    #   toggle:
+    #     icon: material/toggle-switch-off-outline
+    #     name: Switch to dark mode
 
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: lime
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+    # # Dark mode
+    # - media: "(prefers-color-scheme: dark)"
+    #   scheme: slate
+    #   primary: lime
+    #   accent: indigo
+    #   toggle:
+    #     icon: material/toggle-switch
+    #     name: Switch to light mode
 
 # Extensions
 markdown_extensions:
