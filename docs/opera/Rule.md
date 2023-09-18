@@ -24,11 +24,8 @@ An Event produces the following data:
 - The time of the last event,
 - The action,
 - The area of interest that is involved.
-
 # Areas of Interest
 When writing a Rule, it is not necessary to supply a single, [[Areas of Interest#Area of Interest Identification and Grouping|unique area of interest]]. It is possible to supply a collection of areas of interest (AoI). The Rule will match any AoI that is in the collection.
-
-
 # Rule
 
 A Rule is a coordination of two events.
@@ -50,7 +47,7 @@ Opera constantly monitor vehicle movements and raises events as they occur.
 A Rule is defined by supplying a *start* event and an *end* event. For example:
 - Start: When a vehicle exits any runway
 - End: When a vehicle enters any ramp
-
+To further refine the rule, we can require that the vehicle be an aircraft.
 ## Promise
 When an event matches the *start* event of a rule, the rule is activated. The rule becomes a *promise* for a precise vehicle and area of interest.
 The Rule remains a promise until the rule times out. The timeout is reset each time the same event occurs for the same vehicle, for the same area of interest.
@@ -66,3 +63,8 @@ When a rule is resolved, the following data is stored:
 - Event data of the resolution.
 
 The most valuable data that is retained is the time difference between the *promise* and the *resolve*, in other words, the duration of the rule.
+
+# Analysis
+
+Rule and event data is saved and analysed by statistical and machine learning algorithms to isolate and extract values of interest.
+Vehicle tracks are also reconstructed and saved for processing by specialised algorithms to also extract values and information of interest.
