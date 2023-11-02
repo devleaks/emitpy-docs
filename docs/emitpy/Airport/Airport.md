@@ -24,6 +24,6 @@ The Managed Airport Base is an abstract class that can be used as the base of Ma
 - Network of taxiways
 - Ramps
 - Network of service roads
-- Points of interest
+- Points of interest like parkings, and depots.
 
 This data can be aquired from different sources.

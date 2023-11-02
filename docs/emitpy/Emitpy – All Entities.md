@@ -14,7 +14,7 @@
     7. Taxiways
     8. Ramps
     9. Aeroway Points of Interest (POI): Runway exit, taxi hold positions.
-2. [[Aircraft]]
+2. [[emitpy-docs/docs/emitpy/Flight/Aircraft]]
 3. [[Flight]]
 
 
