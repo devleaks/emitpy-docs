@@ -1,7 +1,11 @@
-# Vehicle Identifier and Grouping
-Most, if not all objects in Opera are identified by [[Identity|4 identifiers]]. These identifiers can be used to group and organize vehicles in collections.
+A Vehicle is a generic term for a device that moves on the ground of the airport and regularly reports its position. A Vehicle can be a ground support vehicle or an aircraft.
 
-For example, the four identifiers can be used as such
+When Opera receives a new position, it first identifies the Vehicle that reported its position.
+# Vehicle Identifier and Grouping
+
+Most, if not all objects in Opera are identified by [[Identity|4 identifiers]]. These identifiers can be used to group and organize objects in collections.
+
+For example, for Vehicles, the four identifiers can be used as such:
 
 | orgId    | classId | typeId  | name   | description                                 |
 | -------- | ------- | ------- | ------ | ------------------------------------------- |
@@ -10,62 +14,21 @@ For example, the four identifiers can be used as such
 | service  | mission | police  | POL123 | Mission patrol vehicle ICAO24 abacad        |
 |          |         |         |        |                                             |
 
+The combination of these four attributes make the *Vehicle Identifier*.
 
+## Vehicle Attributes
 
+### Key
 
-# Vehicle Statistics
-Observable vehicle are recorded and their movement is reported.
+The key of a vehicle is its ICAO24 ADS-B address in hexadecimal format (6 hexadecimal digits).
 
-## Key
-The key of an observable vehicle is its ICAO 24 bit transponder address.
+### Identifier
 
-## Recorded Data
-### Vehicle
-Vehicle type
-- Aircraft
-- Service
-- Mission
+See above.
 
-### Position
-When a vehicle broadcast its position, the following information is recorded:
-- timestamp of *reception* of message by Opera
-- ICAO address
-- position (latitude, longitude)
-- altitude if available
-- speed if available
-- timestamp of *emission* of message if available
+The identifier is used to uniquely identify an object.
 
-Redis Key: `vehicle:lastpos:icao24`
+### Is Aircraft
 
-## Position Analysis
-
-### Areas
-In addition to the preceeding data, the following is immediately associated with the vehicle:
-- Inside:
-	- Timestamp
-	- (Airport) areas of interest (identifiers) where the vehicle is inside.
-- Crossed:
-	- (current timestamp, time elapsed since last timestamp)
-	- (Airport) areas of interest (identifiers) that intersect the line between the last known position and the current position. 
-
-### Stopped
-We determine if the vehicle is moving or stopped.
-(Algorithm needs refinement.)
-
-If stopped on parking area or near aircraft parking/apron: notifies, but behavior acceptable.
-If stopped (for a long time) on a service road not on a parking area: raise warning.
-
-### H3
-We record the [H3](https://h3geo.org) index (level 14, 6sq.meter resolution for hexagons) where the vehicle is located.
-
-## Behavior Analysis
-
-### Observations
-Observations over last *x* minutes:
-1. Average speed if not stopped
-2. Average speed if not parked (parked = stopped in designated parking area)
-3. Average distance covered
-4. Average time stopped/in movement (ratio)
-
-### Reports
+There is a distinction between aircrafts and ground vehicle or personnel.
 

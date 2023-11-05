@@ -26,9 +26,9 @@ Future releases tags:
 13: Titanic
 14: Titan
 15: HMS Namur
-Toyama Maru
-Indomptable
-Achille
+16: Toyama Maru
+17: Indomptable
+18: Achille
 Redoutable
 Scilly naval disaster of 1707
 
