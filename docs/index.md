@@ -1,9 +1,8 @@
  
 
-Airport Opera is a software tool to estimate the operational effectiveness of an airport.
+Airport Opera is a software application that estimate the operational effectiveness of an airport.
 
-[[Opera – Airport Operational Effectiveness Assessment|Airport Opera]] proceeds from observation of aircrafts and ground support vehicles movements. From observations, quantified observables are created and constantly monitored.
-They are compared to past values, providing an array or possible trends and evolutions of a current situation.
+[[Opera – Airport Operational Effectiveness Assessment|Airport Opera]] proceeds from observation of aircrafts and ground support vehicles movements. From observations, quantified observables are created and constantly monitored. They are compared to past values, providing an array or possible trends and evolutions of a current situation.
 
 
 # Emitpy: ADS–B Track Generator

@@ -1,5 +1,7 @@
 
-A Rule correspond to a movement of interest that needs monitoring. A Rule specify which vehicles, class or types of vehicles, need monitoring. It then details which types of movements need reporting. To specify the movements that need reporting, a Rule uses two *Events*, a start event that dictates when the monitoring of the movement must start, and an end event that dictates when the movement no longer need to be monitored.
+A Rule correspond to a movement of interest that needs monitoring.
+
+A Rule first specifies which vehicles need monitoring and then details which types of movements need reporting. To precise the movements, a Rule uses two *Events*, a start event that dictates when the monitoring of the movement must start, and an end event when the movement no longer need to be monitored.
 
 # Events
 
@@ -25,6 +27,49 @@ Finally, all areas of interest that are intersected by the line joining the penu
 
 > For most events, crossing points between vehicle trajectories and areas of interest are recorded and it is possible to determine timing information if necessary.
 
+## Areas of Interest
+
+Areas of interest are polygons on the ground of the airport. They can be as large as the entire airport or as small as a parking location.
+
+Areas of interest are named following the same identification mechanism as vehicle, using four attributes. This allow for basic areas of interest grouping, by classes or types.
+
+When writing an Event, it is not necessary to supply a single, [[Areas of Interest#Area of Interest Identification and Grouping|unique area of interest]]. It is possible to supply a collection of areas of interest (AoI). The Event will match any AoI that is in the collection.
+
+# Rule
+
+A Rule is a coordination of two events for a vehicle, or category of vehicle.
+
+## Name
+
+Each Rule has a name for identification purpose. It usually is a serial number.
+If the name of the Rule starts with `#`, the Rule is ignored (commented out).
+
+## Vehicles
+
+When writing a Rule, it is not necessary to supply a single, unique vehicle identifier. It is possible to supply a **type** and/or a **class** of vehicles. The Rule will match any vehicle that is in the collection. Examples of vehicle classes are aircrafts, or ground support vehicle. Examples of vehicle types are aircraft models or ground support vehicle function like refueling or baggage handling.
+
+In a Rule, the vehicle is specified as a regular expression that must match the vehicle identifier.
+## Areas of Interest
+
+In a Rule, the collection of areas of interest is specified as a regular expression that must match the area of interest identifier.
+## Start and End Events
+
+A Rule is defined by two events of interest, a *start* event and an *end* event.
+
+For example:
+
+- Start: When a vehicle exits any runway
+- End: When a vehicle enters any ramp
+
+## Rule Timeout
+
+The rule has a timeout that is started when the start event occurs and determine the time before which the end event must arrive.
+The rule will always remain active until it times out, even if its end event(s) occurred.
+The timeout is reset each time the start event of the rule occurs.
+
+# Rule Monitoring
+
+Each time a new position arrives, Opera determine the vehicle and monitor whether the vehicle triggers some Events.
 ## Event Message
 
 A vehicle making an action relative to an area of interest produces a Message with:
@@ -35,41 +80,7 @@ A vehicle making an action relative to an area of interest produces a Message wi
 - The action,
 - The area of interest that is involved.
 
-# Areas of Interest
-
-Areas of interest are polygons on the ground of the airport. They can be as large as the entire airport or as small as a parking location.
-
-Areas of interest are named following the same identification mechanism as vehicle, using four attributes. This allow for basic areas of interest grouping, by classes or types.
-
-When writing a Rule, it is not necessary to supply a single, [[Areas of Interest#Area of Interest Identification and Grouping|unique area of interest]]. It is possible to supply a **named** collection of areas of interest (AoI). The Rule will match any AoI that is in the collection.
-
-# Rule
-
-A Rule is a coordination of two events for a vehicle, or category of vehicle.
-
-## Vehicles
-
-When writing a Rule, it is not necessary to supply a single, unique vehicle identifier. It is possible to supply a **type** and/or a **class** of vehicles. The Rule will match any vehicle that is in the collection. Examples of vehicle classes are aircrafts, or ground support vehicle. Examples of vehicle types are aircraft models or ground support vehicle function like refueling or baggage handling.
-
-## Start and End Events
-
-A Rule is defined by two events of interest, a *start* event and an *end* event.
-For example:
-
-- Start: When a vehicle exits any runway
-- End: When a vehicle enters any ramp
-
-## Rule Timeout
-
-The rule also has a timeout that is started when the start event occurs and determine the time before which the end event must arrive.
-The rule will always remain active until it times out, even if end event(s) occurred.
-The timeout is reset each time the start event occurred.
-
-# Rule Monitoring
-
-Each time a new position arrives, Opera determine the vehicle and monitor whether the vehicle triggers some Events.
-
-If a triggered event is part of a Rule, the Rule is updated as follow.
+If a triggered event is part of a Rule, the Rule is updated as follow:
 ## Promise
 
 When an event matches the *start* event of a rule, the rule is **activated**. The rule becomes a *promise* for a precise vehicle and area of interest.
@@ -78,6 +89,7 @@ The Rule remains a promise until the rule times out. The timeout is reset each t
 ## Resolution
 
 When an event matches the *end* event of a Promise, the rule is **resolved**. The result of the rule is archived for later processing.
+
 When a rule is resolved, its promise is not removed. The promise remains until it times out.
 
 ## Resolved Rule Data

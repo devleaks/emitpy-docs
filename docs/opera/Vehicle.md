@@ -1,17 +1,18 @@
 A Vehicle is a generic term for a device that moves on the ground of the airport and regularly reports its position. A Vehicle can be a ground support vehicle or an aircraft.
 
 When Opera receives a new position, it first identifies the Vehicle that reported its position.
+
 # Vehicle Identifier and Grouping
 
-Most, if not all objects in Opera are identified by [[Identity|4 identifiers]]. These identifiers can be used to group and organize objects in collections.
+Most, if not all objects in Opera are identified by [[Identity|4 identifiers]]. These identifiers are used to group and organize objects in collections.
 
 For example, for Vehicles, the four identifiers can be used as such:
 
 | orgId    | classId | typeId  | name   | description                                 |
 | -------- | ------- | ------- | ------ | ------------------------------------------- |
-| aircraft | C       | A321    | OO-PMA | Airbus A321 with ICAO24 registration efface |
-| service  | fuel    | hydrant | FUEL07 | Fuel vehicle ICAO24 aabbcc                  |
-| service  | mission | police  | POL123 | Mission patrol vehicle ICAO24 abacad        |
+| British Airways | C       | A321    | OO-PMA | Airbus A321 with ICAO24 registration efface |
+| StandardOil  | fuel    | hydrant | FUEL07 | Fuel vehicle ICAO24 aabbcc                  |
+| LAPD  | Security | police  | POL123 | Mission patrol vehicle ICAO24 abacad        |
 |          |         |         |        |                                             |
 
 The combination of these four attributes make the *Vehicle Identifier*.
