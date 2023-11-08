@@ -65,6 +65,8 @@ For example:
 
 The rule has a timeout that is started when the start event occurs and determine the time before which the end event must arrive.
 
+The timeout is a fine parameter that can be adjusted to generate multiple events when necessary. For exemple, if a vehicle runs back and forth through a area of interest, a long timeout will only capture the first and last traversal of the area of interest in a single promise/resolve pair because the promise will be slow to expire. On the opposite, with a short timeout, each traversal with create a new promise/resolve pair since the previous promise will be expired due to the short timeout.
+
 # Rule Monitoring
 
 Each time a new position arrives, Opera determine the vehicle and monitor whether the vehicle triggers some Events.
@@ -83,10 +85,11 @@ If a triggered event is part of a Rule, the Rule is updated as follow:
 
 When an event matches the *start* event of a rule, the rule is **activated**. The rule becomes a *promise* for a precise vehicle and area of interest.
 
-The Rule remains a promise until it times out. The start time of the timeout is reset each time the same start event occurs, for the same vehicle, for the same area of interest, and when the promise is not expired.
+### Promise Timeout
 
-When a Promise has timed out, it cannot be resolved nor reset. It is archived. If a new start event arrives for the same vehicle, for the same area of interest, and an previous promise has expired (and has been archived), a new promise is created.
+The Rule remains a promise until it times out. The start time of the timeout is reset each time the same start event occurs, for the same vehicle, for the same area of interest, while the promise is *not expired*.
 
+When a Promise has timed out (is expired), it can no longer be resolved nor reset. It is archived. If a new start event arrives for the same vehicle, for the same area of interest, and an previous promise has expired (and has been archived), a *new promise* is created.
 ## Resolution
 
 When an event matches the *end* event of a Promise, the rule is **resolved**. The result of the rule is archived for later processing.
