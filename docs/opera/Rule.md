@@ -64,8 +64,6 @@ For example:
 ## Rule Timeout
 
 The rule has a timeout that is started when the start event occurs and determine the time before which the end event must arrive.
-The rule will always remain active until it times out, even if its end event(s) occurred.
-The timeout is reset each time the start event of the rule occurs.
 
 # Rule Monitoring
 
@@ -84,7 +82,10 @@ If a triggered event is part of a Rule, the Rule is updated as follow:
 ## Promise
 
 When an event matches the *start* event of a rule, the rule is **activated**. The rule becomes a *promise* for a precise vehicle and area of interest.
-The Rule remains a promise until the rule times out. The timeout is reset each time the same start event occurs, for the same vehicle, for the same area of interest.
+
+The Rule remains a promise until it times out. The start time of the timeout is reset each time the same start event occurs, for the same vehicle, for the same area of interest, and when the promise is not expired.
+
+When a Promise has timed out, it cannot be resolved nor reset. It is archived. If a new start event arrives for the same vehicle, for the same area of interest, and an previous promise has expired (and has been archived), a new promise is created.
 
 ## Resolution
 
