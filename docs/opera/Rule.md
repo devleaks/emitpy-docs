@@ -61,6 +61,10 @@ For example:
 - Start: When a vehicle exits any runway
 - End: When a vehicle enters any ramp
 
+## Same Area Of Interest
+
+This boolean flag indicates whether the area of interest of the start and end event must be exactly the same or not.
+
 ## Rule Timeout
 
 The rule has a timeout that is started when the start event occurs and determine the time before which the end event must arrive.

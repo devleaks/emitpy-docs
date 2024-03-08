@@ -4,24 +4,54 @@ There are two types of Flight:
 - Departure flights are flights that leave the Managed Airport.
 
 The creation of a flight is a 3 step process:
-- Creation of the Flight Route
+- Creation of the Flight Plan
 - Creation of the Flight Movement, including airport procedures and taxi at the managed airport
 - Smoothing of the Flight Movement to make the journey more realistic.
 
-## Flight Route
-A Flight Route is a route from a departure airport to an arrival airport on the network of airway segments.
-## Flight Movement
-The Flight Movement is the augmentation of the Flight Route for airport specific complements.
-If available, standard departure and arrival routes are added to propose a more realistic flight path. (If no procedure is available, the aircraft climbs or lands straight on the airport position, aligned with the runway if available.)
-A the same time, a basic vertical navigation is added using Aircraft Performances for speeds, accelerations, and operating limits.
-Finally, taxi route is added at the Managed Airport, from the runway to the parking position for arrival flights, or from the parking position to the start of the runway for departing flights.
+## Flight Plan
 
-Airspace and airway restrictions are not taken into account.
-## Flight Smoothing
-At this stage, the flight consists of straight flight segments with no transition. The smoothing algorithm adds a few limited adjustment to the flight path (fly-by waypoints, smooth procedure turns, straightforward transitions (direct-to), etc.)
+A Flight Plan is a succession of flight segments.
+
+First a **Flight Route** is created from departure airport to arrival airport. Route is created following high and low airways. An arbitrary flight level is decided based on the distance between the two airports.
+
+The flight plan is completed by **flight procedures**, if available, around both terminal areas. Flight produces are selected according to weather information (QFU from weather METAR and/or TAF), and some randomness. Airport local usage and rules are not enforced, but rather randomly selected.
+
+A flight plan only contains lateral navigation.
+
+## Flight Movement
+
+### Movement Complements
+
+The Flight Movement is a [[Movement]]. It is the flight plan completed with:
+1. Vertical navigation with altitude restrictions,
+2. Lateral and vertical navigation with speed restrictions,
+3. Taxi in or out at the managed airport, from the runway to the parking position for arrival flights, or from the parking position to the start of the runway for departing flights.
+
+Vertical navigation is added taking into account Aircraft Performances for speeds, accelerations, and operating limits.
+Vertical navigation is geometric, taking into account aircraft capabilities.
+
+Airway restrictions are not taken into account.
+
+#### Notes on Flight Movement
+
+The relation between flight plan waypoints and movement points is preserved. However, several movement points may be attached to a single flight plan waypoint.
+
+Mots natably, for example:
+- Take off hold, take-off, and end-of-initial-climb points are all attached to the departing airport.
+- (Artificial) final fix, touch-down, and end-of-roll are all attached to the arrival airport waypoint.
+- When a "smooth turn" (fly by or fly over) is added at a fly plan waypoint, all movement points are attached to the flight plan waypoint.
+
+### Flight Smoothing
+
+At this stage, the flight consists of straight flight segments with no smooth transitions. The smoothing algorithm adds a few limited adjustment to the flight path (fly-by waypoints, smooth procedure turns, straightforward transitions (direct-to), etc.)
+
+Finally, data and meta data is carried over from vertices to vertices, linearly interpolating values when necessary.
+
+The Fliht Movement is a succession of segments, each vertex has information relative to the aircraft movement (speed, altitude, vertical speed, etc.)
 ## Summary
 ![[flight-movement.png]]
 ## Flight Times
+
 Flights have three times associated with them:
 - The Scheduled date/time is mandatory and always used to create the flight.
 - If an Estimated time of arrival/departure is available, the flight can be "rescheduled" accordingly.
@@ -30,6 +60,7 @@ Scheduled and actual flight times cannot be changed.
 If the Estimated time is not available, the Scheduled time is used.
 (Note: Changes of ETA/ETD are kept in a historical structure to keep track of estimated time adjustments and refinements.)
 ## Flight Identifier
+
 IATA has a well-defined method to identify a commercial flight. We adjusted the method to suit our needs.
 A flight is identified by
 - The operator of the flight

@@ -29,6 +29,6 @@ OTHH:Airway:Taxiway:W05
 
 Airbus:Airliner:A32N:Airbus A320 Neo
 
-OTHH:Airport::Hamad International Airport
+OTHH:Airport::Hamad International Airport (please note no `typeId`.)
 
 QAS:GSE:fuel-hydrant:FU04
