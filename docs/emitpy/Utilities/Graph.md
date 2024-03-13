@@ -9,7 +9,7 @@ In emitpy, a Graph is a collection of Vertices (Vertex, a GeoJSON Feature< Point
 
 Vertices and Edges have additional properties like the `usage` property that list one or more use of the vertex or edge.
 
-
+While graph entities remain custom classes in Emitpy, each contain a networkx Graph representation that is used to find routes.
 ## Route
 
 A Route is a list of segments (Edges) to go from a source vertex to a destination vertex.
