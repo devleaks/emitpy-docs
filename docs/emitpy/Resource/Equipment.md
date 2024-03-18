@@ -1,5 +1,3 @@
-#airport #business #resource
-
 An Equipment is a hardware resource that is used by service, typically Ground Support Vehicle. The vehicle reports it’s position so that it can be integrated into Opera analysis.
 
 (will be detailed later, to do)

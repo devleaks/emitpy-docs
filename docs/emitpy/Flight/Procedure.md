@@ -1,7 +1,7 @@
-#flight #airspace 
-Coded Instrument Flight Procedures are read from FAA data files and exposed as flight segments usable by emitpy.
+Coded Instrument Flight Procedures are read from FAA data files and exposed as flight segments usable by Emitpy.
 
 The following entities are created:
+
 - Terminal (an airport)
 - RWY (a runway, if available, two opposite runways are paired, like 34L and 16R)
 - SID
@@ -16,14 +16,17 @@ For an airport involved in a flight, those procedures are loaded "on demand" ([[
 
 
 # Turns
+
 During the flight route smoothing, turns are modified to provide a realistic flight path. At each vertex, the flight proceeds with either a fly-by or a fly-over path, as requested by waypoints.
 ## Fly-By
+
 For fly-by waypoints, a smooth standard turn is built in front of the waypoint. For very sharp angle turns, this can lead to very early turns.
 A center of turn path is found between the two segments and then a turn is added, tangent to both segments.
 
 ![[flyby.png]]
 
 ## Fly-Over
+
 Flight over waypoint proceed with two coordinated standard turns. After flying over the way point, the aircraft turns in the direction of the next way point. The turn angle is set to 150% of the turn angle toward the next way point (but no more than a 180° U-turn) to allow the aircraft to fly back on next leg. From the new temporary heading, the aircraft proceed with a smooth fly-by at the intercept point to continue its journey towards the next waypoint.
 
 ![[flyover.png]]

@@ -35,6 +35,7 @@ Both values are always very close for typical airliners descending to typical ST
 If, for a short flight, the climb was not finished at the top of descend, a warning is issued and the flight level of the whole flight is adjusted accordingly. This should not happen if flight level was computed by Emitpy.
 
 # Airway Restrictions
+
 There is currently no airway restriction implemented, although all hooks to do it are ready. (One day, may be.)
 The only constraint that are handled during flight plan calculation are airway *types* (high, low, or both) and *direction* (one way, two way). (These conditions are sometimes relaxed if no route can be found between two airports. In this cas, a warning is issued.)
 

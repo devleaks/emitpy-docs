@@ -1,4 +1,3 @@
-#airport #resource #business 
 Runway usage is closely monitored through the emitpy application.
 A Runway is "busy"
 - when an aircraft is cleared for landing until it leaves the runway at a runway exit,

@@ -5,12 +5,14 @@ Emitpy will simulate activity on the ground of that airport, and generate locati
 The Managed Airport is a container entity. It is responsible for loading and sharing common structures.
 
 A first set of entities is necessary to create and simulate aircraft movements:
+
 - The entire «[[Aerospace]]» as used in the application,
 - All airports,
 - Airlines, and other operators and handlers,
 - All aircraft types that can be used in the application.
 
 It then loads entities specific to the managed airport, all contained in a «[[Airport#Managed Airport Base|Managed Airport Base]]»:
+
 - Flight procedures for departures and arrivals
 - Runways
 - Taxiways
@@ -22,6 +24,7 @@ It then loads entities specific to the managed airport, all contained in a «[[A
 A Weather Engine is created to fetch airport and en-route weather and forecasts.
 
 Finally, it initialise the [[Airport Manager]], another containing entity responsible for airport resource allocation and monitoring:
+
 - Runway usage,
 - Ramp occupancies,
 - Equipment and service vehicle use.

@@ -3,10 +3,12 @@
 
 An Aircraft is entity that reprensent a precise frame.
 An aircraft has
+
 - A registration
 - An optional initial registration or serial number
 - An ICAO24 bit address, often presented as a 6 hexadecimal character suite,
 - but most importantly, has an **Aircraft Type** (*with performance* data associated to it).
+
 It can also contain other properties like its seating or cargo configuration.
 ## Aircraft Type
 

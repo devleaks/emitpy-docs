@@ -1,4 +1,3 @@
-#utility
 Graphs are used when it is necessary to find a Route between two points close to the graph.
 
 1. Navaids, fixes and airway segments form the Airspace graph.

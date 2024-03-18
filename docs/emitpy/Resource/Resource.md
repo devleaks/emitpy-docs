@@ -1,4 +1,3 @@
-
 A resource is a named entity that maintains a list of usage times (allocations called Reservation).
 
 Emitpy maintain the following resources:

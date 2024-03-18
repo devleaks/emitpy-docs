@@ -1,12 +1,15 @@
 
 # Aircraft Type
+
 An aircraft type is a ICAO Aircraft Type Designator.
 Aircraft Type also has:
+
 - Manufacturer
 - Model name
 - Aircraft type (for airliners, aircraft class)
 
 Aircraft Type optionally has:
+
 - Number of engines
 - Type of engine
 - Wingspan

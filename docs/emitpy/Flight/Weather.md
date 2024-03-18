@@ -1,4 +1,5 @@
 Emitpy takes into account weather information at the following flight phases:
+
 - Departure airport: Wind speed and direction, precipitations; to select runway orientation and adjust take-off distance.
 - En route: Wind at the expected aircraft level; to adjust ground speed and heading.
 - Arrival airport: Wind speed and direction, precipitations; to select runway orientation and adjust landing distance.
@@ -10,8 +11,10 @@ Weather can be provided from different sources.
 ## Weather at Airports
 
 The API for weather at airport is limited to:
+
 1. Wind speed and direction
 2. Amount of precipitations
+
 Weather can be requested at any time (default is now).
 
 
@@ -35,6 +38,7 @@ The API for en-route weather limited to:
 Wind can be requested at any time (default is now).
 
 For current en-route weather, Emitpy uses
+
 - either current GFS prediction for the next flight hours/duration (typically 12, 18, or 24 hours),
 - or X-Plane pre-processed weather files (also in GRIB format, predictions at 3 and 6 hours, updated frequently if X-Plane is running.
 
@@ -65,10 +69,12 @@ For en-route winds, we use the wind predictions that were available at the time 
 ### Airports
 For departing airport, we use historical or current METAR.
 For arrival airport, for a flight in the past, we use (in order):
+
 - Historical METAR at the time of arrival (exact weather)
 - Historical TAF at the time of departure, like pilots would have used
 - Current TAF at destination at time of departure
 - Current METAR at destination at time of departure
+
 For a flight « now », we use the current TAF at the destination airport.
 (Since we mainly deal with large airports, TAF are often available.)
 If the TAF is not available at the destination airport, we use the current METAR.
@@ -81,8 +87,10 @@ The fall back is to use the current forecast.
 
 For en-route wind forecast, we only use one set of data for simplicity. The time of the prediction is not adjusted as flight progresses.
 Depending on the duration of the flight, we try to get the following prediction:
+
 - Flights less that 6 hours: predictions at 3 h (after the scheduled or estimated time of departure)
 - Flights more that 6 hours: predictions at 6 hours.
+
 Both forecast at readily available, especially when using X-Plane Real weather files.
 
 Same occurs when trying to estimate TAF predictions to be taken into account at the scheduled or estimated time of arrival at destination airport.

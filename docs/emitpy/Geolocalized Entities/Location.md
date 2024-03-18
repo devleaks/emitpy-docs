@@ -1,4 +1,3 @@
-#business #geo 
 A location is a named, geolocalized entity.
 
 The location has
