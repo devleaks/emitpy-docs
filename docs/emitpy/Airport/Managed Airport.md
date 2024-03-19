@@ -1,4 +1,3 @@
-#airport #business
 The Managed Airport represents the airport that *Airport Opera* will monitor.
 Emitpy will simulate activity on the ground of that airport, and generate location messages as they would be produced by vehicles on the ground or captured by ground radar equipments.
 
@@ -23,10 +22,10 @@ It then loads entities specific to the managed airport, all contained in a «[[A
 
 A Weather Engine is created to fetch airport and en-route weather and forecasts.
 
-Finally, it initialise the [[Airport Manager]], another containing entity responsible for airport resource allocation and monitoring:
+Finally, it initialise the «[[Airport Manager]]», another containing entity responsible for airport resource allocation and monitoring:
 
 - Runway usage,
 - Ramp occupancies,
 - Equipment and service vehicle use.
 
-Once all components are loaded, emitpy is ready to create [[Flight|flights]] and [[Service|services]].
+Once all components are loaded, Emitpy is ready to create [[Flight|flights]] and [[Service|services]].

@@ -1,4 +1,3 @@
-#geo
 To enhance movement realism, emitpy needs a few named points of interest as destination.
 It is not possible to find those points in any database.
 We recommand using a tool like geojson.io to create a GeoJSON FeatureCollection with all named point. Point must be attached a few GeoJSON Feature properties to identify and qualify them.

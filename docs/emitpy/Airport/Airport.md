@@ -1,5 +1,3 @@
-#airport
-## Airport
 In its simplest form, an Airport is a localized named entity. It contains:
 
 * Its position (lat, lon, alt)
@@ -7,7 +5,7 @@ In its simplest form, an Airport is a localized named entity. It contains:
 * Its timezone
 
 
-## AirportWithProcedures
+# AirportWithProcedures
 In a more complex form, an airport can be fit with its *Coded Instrument FlightÂ Procedures*. Procedures include:
 
 - Runways
@@ -18,7 +16,7 @@ In a more complex form, an airport can be fit with its *Coded Instrument FlightÂ
 Sometimes, noticeable transitions are also included.
 
 
-## Managed Airport Base
+# Managed Airport Base
 In its most complex form, an airport references all additional data necessary to qualify as a Managed Airport.
 
 The Managed Airport Base is an abstract class that can be used as the base of Managed Airport. Realisation of the abstract class are responsible for loading and providing necessary data. A Managed Airport must contain the following data:

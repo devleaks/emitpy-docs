@@ -1,4 +1,3 @@
-#output #file 
 In its simplest form, Emitpy can optionally save each step of the emission creation process into files.
 
 For flights:

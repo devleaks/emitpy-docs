@@ -1,4 +1,3 @@
-#flight 
 A Flight Route is a flight path from an origin airport to a destination airport only flying on airway segments.
 
 # Notes on Route and Flight Plan Building
@@ -16,7 +15,7 @@ The above selection process makes a flight fairly random. Supplying the same par
 
 To circumvent this randomness, in case of need, to reproduce the exact same flight, it is optionally possible to supply runways and procedures to use at both ends. This leads to a repeating flight path, provided weather is not changed. This allow, for example, to test different aircrafts or variables with different performances for the same flight.
 
-### Take-Off, Initial Climb and Final Fix
+## Take-Off, Initial Climb and Final Fix
 
 Take-off always occurs in a straight line, ascending at initial-climb speed and vertical speed, up to 1500ft. After that, there is a Direct Fix to the first point of the SID procedure if any.
 
@@ -24,7 +23,7 @@ On arrival, the last point of the approach procedure always leads (Direct to Fix
 
 On arrival also, if the last point of the flight plan does not contain an altitude restriction, it is assigned one. The altitude set for the restriction depends on the distance of this last point to the airport. (A speed restriction might also be applied.) Please recall that during descent, altitude restrictions are carried forward to the next point if he next point does not have a restriction.
 
-### Transitions
+## Transitions
 
 Transitions are always Direct to Fix. To the next point.
 This may result in sometimes in unusual turns from last procedure waypoint to next procedure waypoint.

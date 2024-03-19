@@ -1,4 +1,3 @@
-
 Events are a special type of aircraft service that does not involve or produce a movement of ground support vehicle.
 
 For example, when an aircraft arrives, the following events occur:

@@ -79,15 +79,15 @@ Each time a new position arrives, Opera determine the vehicle and monitor whethe
 A vehicle making an action relative to an area of interest produces a Message with:
 
 - The vehicle identifier,
-- (The position of the vehicle,)
-- The time of the last event,
+- The position of the vehicle,
+- The time of the event,
 - The action,
 - The area of interest that is involved.
 
 If a triggered event is part of a Rule, the Rule is updated as follow:
 ## Promise
 
-When an event matches the *start* event of a rule, the rule is **activated**. The rule becomes a *promise* for a precise vehicle and area of interest.
+When an event matches the *start* event of a rule, the rule is *activated*. The rule becomes a **promise** for a precise vehicle and area of interest.
 
 ### Promise Timeout
 
@@ -96,7 +96,9 @@ The Rule remains a promise until it times out. The start time of the timeout is 
 When a Promise has timed out (is expired), it can no longer be resolved nor reset. It is archived. If a new start event arrives for the same vehicle, for the same area of interest, and an previous promise has expired (and has been archived), a *new promise* is created.
 ## Resolution
 
-When an event matches the *end* event of a Promise, the rule is **resolved**. The result of the rule is archived for later processing.
+When an event matches the *end* event of a Promise, the rule is *resolved*. The result of the rule is archived for later processing.
+
+The Rule must be resolved by **the same vehicle** that triggered it.
 
 When a rule is resolved, its promise is not removed. The promise remains until it times out.
 
@@ -110,3 +112,10 @@ When a rule is resolved, the following data is stored:
 
 The most valuable data that is retained is the time difference between the *promise* and the *resolve*, in other words, the duration of the rule.
 
+Other data is used as follow:
+
+The vehicle that triggered the rule gives information about actors in the activity. Who is doing what, what activities are going on.
+
+The area(s) of interest where the rule occurred gives location information: Where is the activity taking place, what are the areas under stressful situations.
+
+The unique combination of actors and areas of activity allow Opera to build an image of all activities running on the ground of the airport.

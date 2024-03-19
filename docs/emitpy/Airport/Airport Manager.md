@@ -1,4 +1,3 @@
-#airport #business 
 The Airport Manager is a containing entity that is responsible for managing resources used by the simulation.
 
 The Airport Manager contains

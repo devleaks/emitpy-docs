@@ -1,4 +1,3 @@
-#output
 Optionally, emitted messages are published on a timely fashion on output queues. This process is called the Broadcast.
 
 The broadcast process is a sophisticated output mechanism that proposes messages on one or more output queue. The model of a queue is a source of data for aircraft and/or vehicle location.

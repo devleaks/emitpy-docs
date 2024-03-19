@@ -1,5 +1,3 @@
-#flight #service 
-
 A Flight Service is a collection of Services executed to handle a Flight.
 
 For example, an Arrival Flight might need:

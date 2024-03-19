@@ -27,7 +27,8 @@ A center of turn path is found between the two segments and then a turn is added
 
 ## Fly-Over
 
-Flight over waypoint proceed with two coordinated standard turns. After flying over the way point, the aircraft turns in the direction of the next way point. The turn angle is set to 150% of the turn angle toward the next way point (but no more than a 180° U-turn) to allow the aircraft to fly back on next leg. From the new temporary heading, the aircraft proceed with a smooth fly-by at the intercept point to continue its journey towards the next waypoint.
+Flight over waypoint proceed with two coordinated standard turns. After flying over the way point, the aircraft turns in the direction of the next way point. The turn angle is set to 150% of the original turn angle toward the next way point (but no more than a 180° U-turn) to allow the aircraft to fly back on next leg. From the new temporary heading, the aircraft proceed with a smooth fly-by at the intercept point to continue its journey towards the next waypoint.
+This is done only if the aircraft has time to join the next leg smoothly before the reaching the next waypoint.
 
 ![[flyover.png]]
 

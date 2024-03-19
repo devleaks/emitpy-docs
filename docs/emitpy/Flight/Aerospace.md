@@ -1,4 +1,3 @@
-#flight #airspace #aerospace
 The Aerospace entity is a container entity for everything related to aerospace where aicrafts can fly. It contains:
 
 - Terminals (airports),

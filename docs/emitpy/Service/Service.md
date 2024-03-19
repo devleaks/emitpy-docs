@@ -1,4 +1,3 @@
-#service 
 A Service is a container entity that represents the movement of an airport ground service vehicle or equipment.
 
 ## Service Type

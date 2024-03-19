@@ -9,7 +9,7 @@ The creation of a flight is a 3 step process:
 - Creation of the Flight Movement, including airport procedures and taxi at the managed airport
 - Smoothing of the Flight Movement to make the journey more realistic.
 
-## Flight Plan
+# Flight Plan
 
 A Flight Plan is a succession of flight segments.
 
@@ -21,9 +21,9 @@ A flight plan only contains lateral navigation and restrictions.
 
 Procedures are inserted and respected. Cruise is adjusted between end of SID and start of STAR; cruise points may be removed if they imply in-flight U-turns.
 
-## Flight Movement
+# Flight Movement
 
-### Movement Complements
+## Movement Complements
 
 The Flight Movement is a [[Movement]]. It is the flight plan completed with:
 
@@ -35,7 +35,7 @@ Vertical navigation is added taking into account Aircraft Performances for speed
 
 Airway restrictions are not taken into account. Aircraft either flight high altitude airways, or low altitude airways, or both combined together. (One day aircraft will flight low airways below ~ FL180 and high airways above.)
 
-#### Notes on Flight Movement
+### Notes on Flight Movement
 
 The relation between flight plan waypoints and movement points is preserved. However, several movement points may be attached to a single flight plan waypoint.
 
@@ -45,14 +45,14 @@ Mots natably, for example:
 - (Artificial) final fix, touch-down, and end-of-roll are all attached to the arrival airport waypoint.
 - When a "smooth turn" (fly by or fly over) is added at a fly plan waypoint, all movement points are attached to the flight plan waypoint.
 
-### Flight Smoothing
+## Flight Smoothing
 
 At this stage, the flight consists of straight flight segments with no smooth transitions. The smoothing algorithm adds a few limited adjustment to the flight path (fly-by waypoints, smooth procedure turns, straightforward transitions (direct-to), etc.)
 
 Finally, data and meta data is carried over from vertices to vertices, linearly interpolating values when necessary.
 
 The Fliht Movement is a succession of segments, each vertex has information relative to the aircraft movement (speed, altitude, vertical speed, etc.)
-## Summary
+# Summary
 ![[flight-movement.png]]
 ## Flight Times
 

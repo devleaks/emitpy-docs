@@ -1,4 +1,3 @@
-
 ### Maintain bi directional like between resource and linked object.
 
 ramp.resource = Resource(resource=ramp)
@@ -22,24 +21,15 @@ Gépès Cidesimal, geospatial specialist,
 
 
 
-Future releases tags:
-13: Titanic
-14: Titan
-15: HMS Namur
-16: Toyama Maru
-17: Indomptable
-18: Achille
-Redoutable
+# Future releases names
+
+17: La Méduse
+18: Indomptable
+19: Achille
+20: Redoutable
 Scilly naval disaster of 1707
 
 
-
----
-
-Route with constraints:
-
-Make sure constraints are on vertices (uniform).
-Make sure constraints that are on edges are carried on vertices (uniform too, possible conflict).
 
 ---
 
@@ -61,7 +51,8 @@ Correct: LoadAirlines in loadapp to load flight operators as well
 
 ---
 Ramp: Add: hasJetway()
-Flight: Add cargo/pax + service choice, shortcut: cargo fligth are not Jetway
+
+Flight: Add cargo/pax + service choice, shortcut: cargo flight are not Jetway
 
 May be add a rule in airport to tell whether Ramp has jetway?
 
@@ -93,3 +84,10 @@ May be review class hierarchy, making movement and emit traits rather than auton
 
 ---
 When scheduled time changed, adjust resource times.
+
+---
+
+Long term: Think "interfaces" like `__geo_interface__` for objects.
+Make a visible object like traffic for flights, etc.
+
+Better isolate flight plan

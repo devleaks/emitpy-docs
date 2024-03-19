@@ -1,7 +1,8 @@
-Runway usage is closely monitored through the emitpy application.
-A Runway is "busy"
-- when an aircraft is cleared for landing until it leaves the runway at a runway exit,
-- when an airicraft is clear for take-off until it reached a critical point at 3000ft AGL and accelerate.
+Runway allocation is *monitored* through the Emitpy application. Emitpy does not schedule runway usage, but monitors it.
 
-It is thereby possible to monitor runway usage.
-The monitored usage is theoretical, because mostly based on "scheduled" times and not estimated ones.
+A Runway is "busy"
+
+- when an aircraft is cleared for landing until it leaves the runway at a runway exit, from about 10 miles out, or 3000ft on final approach,
+- when an aircraft is clear for take-off until it reached a critical point at 1500ft AGL and accelerate.
+
+The monitored usage is theoretical, because based on "scheduled" times and not estimated ones.
