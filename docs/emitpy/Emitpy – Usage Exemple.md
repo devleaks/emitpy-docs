@@ -1,4 +1,4 @@
-Practically, currently, the emitpy generator can be used from two end points.
+Practically, currently, the Emitpy generator can be used from two end points.
 
 # Python EmitApp Class
 First, there is a wrapping EmitApp python class that loads all necessary entities and offer a limited number of entry points to generate flights and ground support equipment movements.
@@ -16,7 +16,8 @@ All function parameters are strings.
 
 
 # REST API
-As an alternative to this python class that can directly be used in python scripts (numerous examples are provided in the `bin` directory), emitpy proposes a very simple direct REST API to execute the very same calls. The REST API also has numerous information end points to get, for example, a list of valid aircraft type or fuel vehicle models. Those information end points can be used to build user interfaces. A Postman file has example of API call and there is also a script of direct calls to the API to exemplify its use. 
+
+As an alternative to this python class that can directly be used in python scripts (numerous examples are provided in the `bin` directory), Emitpy proposes a very simple direct REST API to execute the very same calls. The REST API also has numerous information end points to get, for example, a list of valid aircraft type or fuel vehicle models. Those information end points can be used to build user interfaces. A Postman file has example of API call and there is also a script of direct calls to the API to exemplify its use. 
 
 # Examples
 
@@ -46,6 +47,6 @@ Here are the most common reasons for failure:
 
 Sometimes, simply re-submitting the same request will work without error, probably because some random combinations of parameters have caused the issue.
 
-We have a set of ~250,000 movements that we generated with emitpy.
+We have a set of ~250,000 movements that we generated with Emitpy.
 Statistically, more than 92% of generation succeed. It is rare to find a failure not enumerated above.
 

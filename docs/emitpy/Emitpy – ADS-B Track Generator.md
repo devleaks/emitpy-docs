@@ -1,4 +1,3 @@
-#intro
 Emitpy is a supporting software for the Airport Opera project.
 
 The goal of the Airport Opera project is to *non-invasively* monitor an airport from ADS-B messages produced by aicrafts and airport ground support vehicles.

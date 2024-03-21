@@ -3,33 +3,44 @@ Emitpy needs miscellaneous information for creating realistic flights or ground 
 ## Airports
 ### Airports
 Airport need the following mandatory information:
+
 - Name
 - Municipality
 - Country
 - Aeronautical region
 - latitude, longitude, and optionally altitude
+- 
 ### Coded Instrument Flight Procedures
+
 If part of a flight, it is more realist of CIFP are available at the remote airport.
 CIFP are mandatory at the managed airport.
 
 ## Navigation
+
 ### Navigation Aids
+
 Navaids need the following mandatory information:
+
 - Name or Identifier
 - Aeronautical region
 - Type of Navaid
 - latitude, longitude, and optionally altitude
 ### Fixes
+
 Fixes need the following mandatory information:
+
 - Name or Identifier
 - Aeronautical region
 - latitude, longitude
 ### Airways
+
 - Name or Identifier
 - Aeronautical region
 - Starting and ending navaid or fix
 - Restrictions (one way, upper or lower airway...)
+- 
 ### Airspaces
+
 - Name or Identifier
 - Aeronautical region
 - Restriction(s)
