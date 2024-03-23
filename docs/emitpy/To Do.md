@@ -91,3 +91,15 @@ Long term: Think "interfaces" like `__geo_interface__` for objects.
 Make a visible object like traffic for flights, etc.
 
 Better isolate flight plan
+
+
+---
+Next airports
+
+FRA (EDDF)
+MUN (EDDM)
+AMS (EHAM)
+
+EBBR
+OMDB
+(OTBD)
