@@ -1,8 +1,8 @@
 site_name: Airport Opera
 
-site_url: https://devleaks.github.io/emitpy
+site_url: https://devleaks.github.io/emitpy-docs/
 repo_url: https://github.com/devleaks/emitpy
-site_description: Documentation for Emitpy ADS-B Track Generator for Airports
+site_description: Documentation for Airport Opera Software
 copyright: |
   Copyright &copy; 2018 - 2024 <a href="https://github.com/devleaks"  target="_blank" rel="noopener">Pierre M</a>
 
